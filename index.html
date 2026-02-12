@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50">
+    <title>Pictogramas Comunicación</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Pantalla de categorías -->
+        <div id="categorias-screen" class="screen active">
+            <h1>Categorías</h1>
+            <div class="categorias-grid">
+                <button class="categoria-btn" data-categoria="necesidades">
+                    <span class="categoria-icono">🍽️</span>
+                    <span>Necesidades</span>
+                </button>
+                <button class="categoria-btn" data-categoria="personas">
+                    <span class="categoria-icono">👥</span>
+                    <span>Personas</span>
+                </button>
+                <button class="categoria-btn" data-categoria="acciones">
+                    <span class="categoria-icono">🏃</span>
+                    <span>Acciones</span>
+                </button>
+                <button class="categoria-btn" data-categoria="emociones">
+                    <span class="categoria-icono">😊</span>
+                    <span>Emociones</span>
+                </button>
+                <button class="categoria-btn" data-categoria="lugares">
+                    <span class="categoria-icono">🏠</span>
+                    <span>Lugares</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla de pictogramas -->
+        <div id="pictogramas-screen" class="screen">
+            <div class="header">
+                <button id="btn-volver" class="btn-back">← Volver</button>
+                <h2 id="categoria-titulo"></h2>
+            </div>
+
+            <!-- Tira de frase -->
+            <div id="frase-container">
+                <div id="frase-pictos">
+                    <div class="picto-slot empty">1</div>
+                    <div class="picto-slot empty">2</div>
+                    <div class="picto-slot empty">3</div>
+                </div>
+                <div class="frase-botones">
+                    <button id="btn-hablar" class="btn-hablar">🔊 Hablar</button>
+                    <button id="btn-limpiar" class="btn-limpiar">🗑️ Limpiar</button>
+                </div>
+            </div>
+
+            <!-- Cuadrícula de pictogramas -->
+            <div id="pictogramas-grid" class="pictogramas-grid"></div>
+        </div>
+
+        <!-- Modal de grabación -->
+        <div id="grabacion-modal" class="modal">
+            <div class="modal-content">
+                <h3>Grabar Audio</h3>
+                <p id="picto-nombre"></p>
+                <div class="grabacion-controles">
+                    <button id="btn-grabar" class="btn-grabar">🎤 Mantén para Grabar</button>
+                    <button id="btn-reproducir" class="btn-reproducir" style="display:none;">▶️ Reproducir</button>
+                    <button id="btn-borrar-audio" class="btn-borrar" style="display:none;">🗑️ Borrar</button>
+                </div>
+                <button id="btn-cerrar-modal" class="btn-cerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
