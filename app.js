@@ -1,7 +1,7 @@
 // Base de datos de pictogramas por categoría
 const pictogramasDB = {
     necesidades: [
-        { id: 'agua', nombre: 'Agua', arasaac: 4852 },
+        { id: 'agua', nombre: 'Agua', arasaac: 2248 },
         { id: 'comida', nombre: 'Comida', arasaac: 5606 },
         { id: 'baño', nombre: 'Baño', arasaac: 2814 },
         { id: 'dormir', nombre: 'Dormir', arasaac: 7392 },
