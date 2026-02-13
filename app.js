@@ -1,12 +1,15 @@
 // Base de datos de pictogramas por categoría
 const pictogramasDB = {
-    necesidades: [
-        { id: 'agua', nombre: 'Agua', arasaac: 2248 },
-        { id: 'comida', nombre: 'Comida', arasaac: 5606 },
-        { id: 'baño', nombre: 'Baño', arasaac: 2814 },
-        { id: 'dormir', nombre: 'Dormir', arasaac: 7392 },
-        { id: 'ayuda', nombre: 'Ayuda', arasaac: 2801 },
-        { id: 'dolor', nombre: 'Dolor', arasaac: 7334 }
+    activitats: [
+        { id: 'ludoteca', nombre: 'Ludoteca', arasaac: 4689 },
+        { id: 'patio', nombre: 'Pati', arasaac: 6204 },
+        { id: 'piscina', nombre: 'Piscina', arasaac: 3142 },
+        { id: 'festival', nombre: 'Festival', arasaac: 25103 },
+        { id: 'refresco', nombre: 'Fer el toc', arasaac: 4732 },
+        { id: 'fiesta', nombre: 'Festa', arasaac: 16649 },
+        { id: 'obra_de_teatro', nombre: 'Teatre', arasaac: 11319 },
+        { id: 'orquesta', nombre: 'Auditori', arasaac: 38296 },
+        { id: 'ir_de_excursion', nombre: 'Excursió', arasaac: 4671 },
     ],
     personas: [
         { id: 'mama', nombre: 'Mamá', arasaac: 2398 },
