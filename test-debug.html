@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Debug</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-btn {
+            display: block;
+            margin: 10px 0;
+            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .test-btn:active {
+            background: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test de Diagnóstico</h1>
+    
+    <button class="test-btn" onclick="test1()">Test 1: Alerta Simple</button>
+    <button class="test-btn" onclick="test2()">Test 2: ¿Se carga app.js?</button>
+    <button class="test-btn" onclick="test3()">Test 3: ¿Existen las categorías?</button>
+    <button class="test-btn" onclick="test4()">Test 4: ¿Funciona el click?</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function test1() {
+            alert('✅ JavaScript funciona!');
+        }
+
+        function test2() {
+            const resultado = document.getElementById('resultado');
+            if (typeof pictogramasDB !== 'undefined') {
+                resultado.innerHTML = '<h3>✅ app.js se cargó correctamente</h3>' +
+                    '<p>Categorías encontradas: ' + Object.keys(pictogramasDB).join(', ') + '</p>';
+            } else {
+                resultado.innerHTML = '<h3>❌ app.js NO se cargó</h3>' +
+                    '<p>El archivo app.js no está disponible o tiene un error de sintaxis.</p>';
+            }
+        }
+
+        function test3() {
+            const resultado = document.getElementById('resultado');
+            if (typeof pictogramasDB !== 'undefined') {
+                let html = '<h3>📋 Contenido de pictogramasDB:</h3>';
+                for (let cat in pictogramasDB) {
+                    html += `<p><strong>${cat}</strong>: ${pictogramasDB[cat].length} pictogramas</p>`;
+                }
+                resultado.innerHTML = html;
+            } else {
+                resultado.innerHTML = '<h3>❌ pictogramasDB no existe</h3>';
+            }
+        }
+
+        function test4() {
+            const resultado = document.getElementById('resultado');
+            const botones = document.querySelectorAll('.categoria-btn');
+            resultado.innerHTML = `<h3>Botones encontrados: ${botones.length}</h3>`;
+            
+            if (botones.length === 0) {
+                resultado.innerHTML += '<p>❌ No se encontraron botones con clase "categoria-btn"</p>';
+            } else {
+                resultado.innerHTML += '<p>✅ Los botones existen en el DOM</p>';
+                botones.forEach((btn, i) => {
+                    resultado.innerHTML += `<p>Botón ${i+1}: data-categoria="${btn.dataset.categoria}"</p>`;
+                });
+            }
+        }
+
+        // Cargar app.js si está disponible
+        const script = document.createElement('script');
+        script.src = 'app.js';
+        script.onerror = () => {
+            document.getElementById('resultado').innerHTML = 
+                '<h3>❌ ERROR: No se pudo cargar app.js</h3>' +
+                '<p>Verifica que el archivo app.js esté en el mismo directorio.</p>';
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
