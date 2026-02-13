@@ -1,4 +1,4 @@
-// Base de datos de pictogramas por categoría
+// Base de datos de pictogramas por categoria
 const pictogramasDB = {
     activitats: [
         { id: 'ludoteca', nombre: 'Ludoteca', arasaac: 4689 },
@@ -9,10 +9,10 @@ const pictogramasDB = {
         { id: 'fiesta', nombre: 'Festa', arasaac: 16649 },
         { id: 'obra_de_teatro', nombre: 'Teatre', arasaac: 11319 },
         { id: 'orquesta', nombre: 'Auditori', arasaac: 38296 },
-        { id: 'ir_de_excursion', nombre: 'Excursió', arasaac: 4671 }
+        { id: 'ir_de_excursion', nombre: 'Excursio', arasaac: 4671 }
     ],
     lloc: [
-        { id: 'subir_al_autobus', nombre: 'Agafar l'autobús', arasaac: 36595 },
+        { id: 'subir_al_autobus', nombre: 'Agafar l\'autobus', arasaac: 36595 },
         { id: 'parque', nombre: 'Parc', arasaac: 2859 },
         { id: 'bar', nombre: 'Bar', arasaac: 4573 },
         { id: 'supermercado', nombre: 'Supermercat', arasaac: 3389 },
@@ -33,11 +33,11 @@ const pictogramasDB = {
         { id: 'lavar_los_dientes', nombre: 'Rentar les dents', arasaac: 6971 },
         { id: 'lavar_las_manos', nombre: 'Rentar les mans', arasaac: 8975 },
         { id: 'lavar_el_pelo', nombre: 'Rentar el cabell', arasaac: 8616 },
-        { id: 'bañar', nombre: 'Banyar-se', arasaac: 6058 },
+        { id: 'banar', nombre: 'Banyar-se', arasaac: 6058 },
         { id: 'vestir', nombre: 'Vestir-se', arasaac: 2781 },
         { id: 'desvestir', nombre: 'Desvestir-se', arasaac: 11233 },
         { id: 'cortar_el_pelo', nombre: 'Tallar els cabells', arasaac: 27695 },
-        { id: 'cortar_las_uñas', nombre: 'Tallar les ungles', arasaac: 10152 },
+        { id: 'cortar_las_unas', nombre: 'Tallar les ungles', arasaac: 10152 },
         { id: 'peinar', nombre: 'Pentinar-se', arasaac: 26947 }
     ],
     lugares: [
@@ -50,7 +50,7 @@ const pictogramasDB = {
     ]
 };
 
-// Estado de la aplicación
+// Estado de la aplicacion
 let categoriaActual = null;
 let fraseActual = [];
 let pictogramaGrabando = null;
@@ -73,13 +73,13 @@ const btnReproducir = document.getElementById('btn-reproducir');
 const btnBorrarAudio = document.getElementById('btn-borrar-audio');
 const btnCerrarModal = document.getElementById('btn-cerrar-modal');
 
-// Inicialización
+// Inicializacion
 document.addEventListener('DOMContentLoaded', () => {
     inicializarApp();
 });
 
 function inicializarApp() {
-    // Event listeners para botones de categorías
+    // Event listeners para botones de categorias
     document.querySelectorAll('.categoria-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const categoria = btn.dataset.categoria;
@@ -87,19 +87,19 @@ function inicializarApp() {
         });
     });
 
-    // Botón volver
+    // Boton volver
     btnVolver.addEventListener('click', volverACategorias);
 
-    // Botón hablar
+    // Boton hablar
     btnHablar.addEventListener('click', hablarFrase);
 
-    // Botón limpiar
+    // Boton limpiar
     btnLimpiar.addEventListener('click', limpiarFrase);
 
-    // Modal de grabación
+    // Modal de grabacion
     btnCerrarModal.addEventListener('click', cerrarModal);
 
-    // Botón grabar (mantener pulsado)
+    // Boton grabar (mantener pulsado)
     btnGrabar.addEventListener('mousedown', iniciarGrabacion);
     btnGrabar.addEventListener('touchstart', (e) => {
         e.preventDefault();
@@ -112,10 +112,10 @@ function inicializarApp() {
     });
     btnGrabar.addEventListener('mouseleave', detenerGrabacion);
 
-    // Botón reproducir
+    // Boton reproducir
     btnReproducir.addEventListener('click', reproducirAudio);
 
-    // Botón borrar audio
+    // Boton borrar audio
     btnBorrarAudio.addEventListener('click', borrarAudio);
 
     // Registrar Service Worker para PWA
@@ -133,7 +133,7 @@ function mostrarPictogramas(categoria) {
     // Limpiar grid
     pictogramasGrid.innerHTML = '';
     
-    // Cargar pictogramas de la categoría
+    // Cargar pictogramas de la categoria
     const pictos = pictogramasDB[categoria] || [];
     pictos.forEach(picto => {
         const card = crearPictogramaCard(picto);
@@ -166,12 +166,12 @@ function crearPictogramaCard(picto) {
     card.appendChild(img);
     card.appendChild(nombre);
     
-    // Click normal: añadir a frase
+    // Click normal: anadir a frase
     card.addEventListener('click', () => {
         agregarAFrase(picto);
     });
     
-    // Mantener pulsado: abrir modal de grabación
+    // Mantener pulsado: abrir modal de grabacion
     let pressTimer;
     card.addEventListener('mousedown', () => {
         pressTimer = setTimeout(() => {
@@ -231,7 +231,7 @@ async function hablarFrase() {
             await reproducirAudioBlob(audio);
             await esperar(300); // Pausa entre palabras
         } else {
-            // Si no hay audio grabado, usar síntesis de voz
+            // Si no hay audio grabado, usar sintesis de voz
             await hablarTexto(picto.nombre);
             await esperar(300);
         }
@@ -270,7 +270,7 @@ function volverACategorias() {
     limpiarFrase();
 }
 
-// Funciones de grabación
+// Funciones de grabacion
 function abrirModalGrabacion(picto) {
     pictogramaGrabando = picto;
     pictoNombre.textContent = picto.nombre;
@@ -319,9 +319,9 @@ async function iniciarGrabacion() {
         
         mediaRecorder.start();
         btnGrabar.classList.add('grabando');
-        btnGrabar.textContent = '🔴 Grabando...';
+        btnGrabar.textContent = 'Grabando...';
     } catch (error) {
-        alert('No se pudo acceder al micrófono');
+        alert('No se pudo acceder al microfono');
     }
 }
 
@@ -329,7 +329,7 @@ function detenerGrabacion() {
     if (mediaRecorder && mediaRecorder.state === 'recording') {
         mediaRecorder.stop();
         btnGrabar.classList.remove('grabando');
-        btnGrabar.textContent = '🎤 Mantén para Grabar';
+        btnGrabar.textContent = 'Manten para Grabar';
     }
 }
 
@@ -343,7 +343,7 @@ function reproducirAudio() {
 }
 
 function borrarAudio() {
-    if (pictogramaGrabando && confirm('¿Borrar el audio grabado?')) {
+    if (pictogramaGrabando && confirm('Borrar el audio grabado?')) {
         eliminarAudio(pictogramaGrabando.id);
         btnReproducir.style.display = 'none';
         btnBorrarAudio.style.display = 'none';
