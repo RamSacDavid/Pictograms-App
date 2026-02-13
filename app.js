@@ -9,7 +9,7 @@ const pictogramasDB = {
         { id: 'fiesta', nombre: 'Festa', arasaac: 16649 },
         { id: 'obra_de_teatro', nombre: 'Teatre', arasaac: 11319 },
         { id: 'orquesta', nombre: 'Auditori', arasaac: 38296 },
-        { id: 'ir_de_excursion', nombre: 'Excursió', arasaac: 4671 },
+        { id: 'ir_de_excursion', nombre: 'Excursió', arasaac: 4671 }
     ],
     personas: [
         { id: 'mama', nombre: 'Mamá', arasaac: 2398 },
