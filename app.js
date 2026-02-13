@@ -11,29 +11,34 @@ const pictogramasDB = {
         { id: 'orquesta', nombre: 'Auditori', arasaac: 38296 },
         { id: 'ir_de_excursion', nombre: 'Excursió', arasaac: 4671 }
     ],
-    personas: [
-        { id: 'mama', nombre: 'Mamá', arasaac: 2398 },
-        { id: 'papa', nombre: 'Papá', arasaac: 2397 },
-        { id: 'hermano', nombre: 'Hermano', arasaac: 12231 },
-        { id: 'hermana', nombre: 'Hermana', arasaac: 12230 },
-        { id: 'abuelo', nombre: 'Abuelo', arasaac: 8857 },
-        { id: 'abuela', nombre: 'Abuela', arasaac: 8856 }
+    lloc: [
+        { id: 'subir_al_autobus', nombre: 'Agafar l'autobús', arasaac: 36595 },
+        { id: 'parque', nombre: 'Parc', arasaac: 2859 },
+        { id: 'bar', nombre: 'Bar', arasaac: 4573 },
+        { id: 'supermercado', nombre: 'Supermercat', arasaac: 3389 },
+        { id: 'escuela', nombre: 'Escola', arasaac: 6454 },
+        { id: 'casa', nombre: 'Casa', arasaac: 2317 },
+        { id: 'piscina', nombre: 'Piscina', arasaac: 3142 },
+        { id: 'playa', nombre: 'Platja', arasaac: 2826 }
     ],
-    acciones: [
-        { id: 'jugar', nombre: 'Jugar', arasaac: 2385 },
-        { id: 'ver_tv', nombre: 'Ver TV', arasaac: 10542 },
-        { id: 'salir', nombre: 'Salir', arasaac: 2518 },
-        { id: 'leer', nombre: 'Leer', arasaac: 2379 },
-        { id: 'escuchar', nombre: 'Escuchar música', arasaac: 7434 },
-        { id: 'caminar', nombre: 'Caminar', arasaac: 11869 }
+    menjar: [
+        { id: 'desayuno', nombre: 'Esmorzar', arasaac: 4626 },
+        { id: 'comida', nombre: 'Dinar', arasaac: 4611 },
+        { id: 'yo', nombre: 'Jo vull', arasaac: 2617 },
+        { id: 'merienda', nombre: 'Berenar', arasaac: 4695 },
+        { id: 'cena', nombre: 'Sopar', arasaac: 4592 }
     ],
-    emociones: [
-        { id: 'contento', nombre: 'Contento', arasaac: 5808 },
-        { id: 'triste', nombre: 'Triste', arasaac: 5809 },
-        { id: 'enfadado', nombre: 'Enfadado', arasaac: 11002 },
-        { id: 'cansado', nombre: 'Cansado', arasaac: 8967 },
-        { id: 'miedo', nombre: 'Miedo', arasaac: 11003 },
-        { id: 'sorprendido', nombre: 'Sorprendido', arasaac: 11006 }
+    higiene: [
+        { id: 'lavar_la_cara', nombre: 'Rentar la cara', arasaac: 34777 },
+        { id: 'lavar_los_dientes', nombre: 'Rentar les dents', arasaac: 6971 },
+        { id: 'lavar_las_manos', nombre: 'Rentar les mans', arasaac: 8975 },
+        { id: 'lavar_el_pelo', nombre: 'Rentar el cabell', arasaac: 8616 },
+        { id: 'bañar', nombre: 'Banyar-se', arasaac: 6058 },
+        { id: 'vestir', nombre: 'Vestir-se', arasaac: 2781 },
+        { id: 'desvestir', nombre: 'Desvestir-se', arasaac: 11233 },
+        { id: 'cortar_el_pelo', nombre: 'Tallar els cabells', arasaac: 27695 },
+        { id: 'cortar_las_uñas', nombre: 'Tallar les ungles', arasaac: 10152 },
+        { id: 'peinar', nombre: 'Pentinar-se', arasaac: 26947 }
     ],
     lugares: [
         { id: 'casa', nombre: 'Casa', arasaac: 2348 },
